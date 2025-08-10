@@ -10,6 +10,7 @@ function ContactUs() {
     service: "",
     message: ""
   });
+  const [loading, setLoading] = useState(false); // New loading state
 
   function onChangeHandle(event) {
     const name = event.target.name;
@@ -25,6 +26,8 @@ function ContactUs() {
       return;
     }
 
+    setLoading(true); // Start loading
+
     try {
       const res = await fetch(url, {
         method: "POST",
@@ -35,13 +38,15 @@ function ContactUs() {
       const result = await res.json();
 
       if (result.success) {
-        toast.success("Message sent successfully!");
+        toast.success("Form submitted successfully!");
         setData({ name: "", email: "", service: "", message: "" });
       } else {
         toast.error(result.message || "Something went wrong");
       }
     } catch (err) {
-      toast.error("Failed to send message");
+      toast.error("Failed to submit form");
+    } finally {
+      setLoading(false); // Stop loading
     }
   }
 
@@ -121,9 +126,12 @@ function ContactUs() {
 
             <button
               type="submit"
-              className="bg-blue-700 text-white px-6 py-2 rounded font-medium hover:bg-blue-900 transition w-full"
+              disabled={loading}
+              className={`bg-blue-700 text-white px-6 py-2 rounded font-medium transition w-full ${
+                loading ? "opacity-70 cursor-not-allowed" : "hover:bg-blue-900"
+              }`}
             >
-              Submit
+              {loading ? "Sending..." : "Submit"}
             </button>
           </form>
         </div>
