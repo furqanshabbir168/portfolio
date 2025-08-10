@@ -127,7 +127,7 @@ function ContactUs() {
             <button
               type="submit"
               disabled={loading}
-              className={`bg-blue-700 text-white px-6 py-2 rounded font-medium transition w-full ${
+              className={`bg-blue-700 text-white px-6 py-2 rounded font-medium transition w-full cursor-pointer ${
                 loading ? "opacity-70 cursor-not-allowed" : "hover:bg-blue-900"
               }`}
             >
