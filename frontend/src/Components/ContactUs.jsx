@@ -1,6 +1,6 @@
 import { useState } from "react";
 import img from "../assets/programming.png";
-import { toast } from "react-toastify"; // Make sure you have react-toastify installed
+import { toast } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function ContactUs() {

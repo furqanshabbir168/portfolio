@@ -11,7 +11,7 @@ import Projects from "./Pages/Projects"
 import Blog from "./Pages/Blog"
 import Contact from "./Pages/Contact"
 import ScrollToTop from "./Components/ScrollToTop"
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-hot-toast";
 
 function App(){
   return(
