@@ -11,12 +11,13 @@ import Projects from "./Pages/Projects"
 import Blog from "./Pages/Blog"
 import Contact from "./Pages/Contact"
 import ScrollToTop from "./Components/ScrollToTop"
-import { ToastContainer } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+
 
 function App(){
   return(
     <div>
-      <ToastContainer position="top-right" autoClose={4000} />
+      <Toaster position="top-center" reverseOrder={false} />
       <ScrollToTop/>
       <NavBar/>
       <Routes>
