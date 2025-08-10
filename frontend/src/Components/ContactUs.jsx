@@ -1,7 +1,6 @@
 import { useState } from "react";
 import img from "../assets/programming.png";
 import { toast } from "react-hot-toast";
-import "react-toastify/dist/ReactToastify.css";
 
 function ContactUs() {
   const url = 'https://portfolio-seven-peach-psmisphbn0.vercel.app/api/contact';
