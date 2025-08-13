@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://furqandev-ruby.vercel.app/sitemap.xml
